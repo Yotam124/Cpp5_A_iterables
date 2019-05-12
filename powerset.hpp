@@ -20,10 +20,10 @@ public:
 
 	powerset(T a) : set(a){}
 
-	myIterator begin(){
+	myIterator begin() const {
 		return myIterator(1);
 	}
-	myIterator end(){
+	myIterator end() const {
 		return myIterator(1);
 	}
 };

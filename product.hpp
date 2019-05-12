@@ -21,10 +21,10 @@ public:
 
 	product(T a, H b) : first(a) , second(b) {}
 
-	myIterator begin(){
+	myIterator begin() const {
 		return myIterator(1);
 	}
-	myIterator end(){
+	myIterator end() const {
 		return myIterator(1);
 	}
 };

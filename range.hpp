@@ -22,10 +22,10 @@ public:
 
 	range(T a, T b) : m_begin(a) , m_end(b){}
 
-	myIterator begin(){
+	myIterator begin() const {
 		return myIterator(m_begin);
 	}
-	myIterator end(){
+	myIterator end() const {
 		return myIterator(m_end);
 	}
 

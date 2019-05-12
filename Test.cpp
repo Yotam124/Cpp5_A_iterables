@@ -6,6 +6,7 @@
  */
 
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 #include "range.hpp"
@@ -19,13 +20,6 @@ using namespace std;
 using namespace itertools;
 using namespace std;
 
-/*template <typename iterable> string iterable_to_string(const Iterable& iterable) {
-	ostringstream ostr;
-	for (decltype(*iterable.begin()) i: iterable){
-		ostr << i << ",";
-	}
-	return ostr.str();
-}*/
 
 int main() {
 
@@ -34,10 +28,10 @@ int main() {
 	int signal = setjmp(badkan::longjmp_buffer);
 	if (signal == 0) {
 
-
-
-
 		testcase.setname("Tests");
+
+
+
 
 
 
