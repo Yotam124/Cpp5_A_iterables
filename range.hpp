@@ -6,76 +6,64 @@
  */
 
 #include <iostream>
-#include "myIterator.hpp"
+#include <assert.h>
+//#include "myIterator.hpp"
 #pragma once
 
 
 namespace itertools {
 
 
-template <typename T> class range {
+template <typename T>
+class Range {
 
-	T m_begin;
-	T m_end;
+	T c_begin;
+	T c_end;
 
 public:
 
-	range(T a, T b) : m_begin(a) , m_end(b){}
+	Range(T a, T b) : c_begin(a) , c_end(b){}
 
-	myIterator begin() const {
-		return myIterator(m_begin);
-	}
-	myIterator end() const {
-		return myIterator(m_end);
-	}
-
-
-
-
-
-
-
-
-	/*class iterator{
-
+	class iterator{
 	private:
-		T value;
+
+		T curr;
 
 	public:
 
-		iterator(T value) : value(value) {
-
+		iterator(T c)
+		: curr(c) {
 		}
 
-		T& operator*() {
-			return value;
+		T operator*() const {
+			return curr;
 		}
-
 
 		iterator& operator++(){
-			this->value++;
+			curr++;
 			return *this;
 		}
-		const iterator operator++(int) {
-			return nullptr;
-		}
 
-		bool operator==(const iterator& rhs) const {
-			return (value == rhs.value);
+		bool operator==(const iterator& other) const {
+			return (curr == other.curr);
 		}
-		bool operator!=(const iterator& rhs) const {
-			return !(value == rhs.value);;
+		bool operator!=(const iterator& other) const {
+			return (curr != other.curr);
 		}
 
 	};
-*/
 
-
-	/*template<typename IT> range(IT begin, IT end) : range() {
-
+	iterator begin()  {
+		return iterator(c_begin);
 	}
-*/
+	iterator end()  {
+		return iterator(c_end);
+	}
+
 };
+template<typename T> Range<T> range(T a, T b){
+		return Range<T> (a, b);
+}
 
 
 

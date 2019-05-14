@@ -11,22 +11,29 @@
 
 namespace itertools {
 
-template <typename T, typename H> class chain {
+template <typename T1, typename T2>
+class Chain {
 
-	T first;
-	H second;
+	T1 first;
+	T2 second;
+
 
 public:
 
-	chain(T a, H b) : first(a) , second(b){}
+	Chain(T1 a, T2 b) : first(a) , second(b){}
 
-	myIterator begin() const {
+	myIterator begin()  {
 		return myIterator(1);
 	}
-	myIterator end() const {
+	myIterator end()  {
 		return myIterator(1);
 	}
+
 };
+
+template<typename T1, typename T2> Chain<T1,T2> chain(T1 a, T2 b){
+		return Chain<T1,T2> (a, b);
+}
 
 
 }
